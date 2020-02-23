@@ -1,0 +1,11 @@
+{
+    "data": {
+        "allTodos": [{
+            "id": "7f407f2b-0d3a-46f7-bd34-c2c888b5ebce",
+            "text": "make mutations in graphql",
+            "priority": "HIGH",
+            "dueDate": "2020-02-23",
+            "__typename": "TodoType"
+        }]
+    }
+}

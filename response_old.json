@@ -1,0 +1,17 @@
+{
+    "data": {
+        "todos": [{
+            "id": "96c83491-a3e8-410c-896d-a6785c932bce",
+            "text": "hello",
+            "priority": null,
+            "dueDate": null,
+            "__typename": "Todo"
+        }, {
+            "id": "69cc292d-c2f6-4918-adda-c602c4f190ef",
+            "text": "test",
+            "priority": null,
+            "dueDate": null,
+            "__typename": "Todo"
+        }]
+    }
+}
