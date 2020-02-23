@@ -14,7 +14,7 @@ source env/bin/activate  # On Windows use `env\Scripts\activate`
 
 ### Install Django and Graphene with Django support
 
-pip install django
+pip install django==2.2
 
 pip install graphene_django
 
