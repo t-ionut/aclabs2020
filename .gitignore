@@ -1,5 +1,6 @@
 *.py[cod]
 *.egg-info
+*.sqlite3
 
 # dependencies
 /client/node_modules
