@@ -78,5 +78,5 @@ class Query(object):
         if _id:
             return Todo.objects.get(id=_id)
         if _text:
-            return Todo.objects.get(text=_text)
+            return Todo.objects.filter(text=_text)
         return None
