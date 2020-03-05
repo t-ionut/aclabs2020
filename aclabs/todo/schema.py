@@ -69,24 +69,27 @@ class Query(object):
         name=graphene.String()
     )
 
-    def _get_text_filter(self, value):
-        return Q(text__istartswith=value) if value else None
+    def _get_text_filter(self, value) -> Q:
+        if value:
+            return Q(text__istartswith=value)
+        return Q()
 
-    def _get_priority_filter(self, value):
-        return Q(priority=value) if value else None
+    def _get_priority_filter(self, value) -> Q:
+        if value:
+            return Q(priority=value)
+        return Q()
 
-    def _get_completed_filter(self, value):
-        return Q(completed=value) if value is not None else value
+    def _get_completed_filter(self, value) -> Q:
+        if value is not None:
+            return Q(completed=value)
+        return Q()
 
     def resolve_all_todos(self, info, **kwargs):
-        main_filter = None
-        for _filter in [self._get_text_filter(kwargs.get("text")),
-                        self._get_priority_filter(kwargs.get("priority")),
-                        self._get_completed_filter(kwargs.get("completed"))]:
-            if _filter:
-                main_filter = _filter if main_filter is None else (main_filter & _filter)
+        main_filter = self._get_text_filter(kwargs.get("text")) & \
+                      self._get_priority_filter(kwargs.get("priority")) & \
+                      self._get_completed_filter(kwargs.get("completed"))
 
-        return Todo.objects.all() if main_filter is None else Todo.objects.filter(main_filter)
+        return Todo.objects.filter(main_filter)
     
     def resolve_todo(self, info, **kwargs):
         _id = kwargs.get("id")
