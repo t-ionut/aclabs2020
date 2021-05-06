@@ -1,4 +1,4 @@
-# aclabs2020
+# aclabs2021
 to do app using django + graphene on backend and apollo and react on frontend
 
 frontend taken from https://github.com/haikyuu/graphql-todo-list 
